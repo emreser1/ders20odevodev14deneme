@@ -23,8 +23,9 @@ class OdevTest {
 		WebElement buttonClick = driver.findElement(new By.ByCssSelector(".btn[id=item-4]"));
 		buttonClick.click();
 
-		WebElement clickMeButton = driver.findElement(new By.ByXPath("//div/button[starts-with(text(), 'Click Me')]"));
-		clickMeButton.click();
+		List<WebElement> clickMeButton = driver.findElements(new By.ByCssSelector(".btn-primary"));
+
+		clickMeButton.get(2).click();
 
 		WebElement dynamicText = driver.findElement(new By.ByCssSelector("#dynamicClickMessage"));
 		String text = dynamicText.getText();
